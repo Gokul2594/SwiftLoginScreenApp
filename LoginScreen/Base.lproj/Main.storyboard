@@ -53,9 +53,9 @@
                                     <action selector="onLoginClick:" destination="BYZ-38-t0r" eventType="touchDown" id="ALH-fG-Hl9"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid credentials. Please try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxm-9v-EYU">
-                                <rect key="frame" x="19" y="461" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid credentials. Please try again." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxm-9v-EYU">
+                                <rect key="frame" x="19" y="461" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -90,6 +90,7 @@
                     <connections>
                         <outlet property="errorLabel" destination="mxm-9v-EYU" id="UCP-a0-KVZ"/>
                         <outlet property="passwordField" destination="P7t-OK-XMN" id="TTw-Ks-Qfx"/>
+                        <outlet property="submitButton" destination="jkx-Ph-Fyl" id="FUQ-8p-J4z"/>
                         <outlet property="usernameField" destination="pgM-CK-y2y" id="B03-8c-HEg"/>
                     </connections>
                 </viewController>

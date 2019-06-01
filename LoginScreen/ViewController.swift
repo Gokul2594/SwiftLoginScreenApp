@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var submitButton: UIButton!
+    var counter: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,24 @@ class ViewController: UIViewController {
         
         let loginManager = LoginManager(username: username, password: password)
         
-        if(loginManager.login()){
-            errorLabel.isHidden = true
+        if(loginManager.login() && counter <= 3 ){
+            errorLabel.text = "Success"
+            errorLabel.textColor = UIColor.green
+            errorLabel.textAlignment = NSTextAlignment.center
+            errorLabel.isHidden = false
         }
         else{
-            errorLabel.isHidden = false
+            counter += 1
+            if(counter == 3) {
+                submitButton.isEnabled = false
+                errorLabel.text = "Invalid credentials. You have been locked out"
+                errorLabel.textColor = UIColor.red
+            }
+            else{
+                errorLabel.textColor = UIColor.red
+                errorLabel.text = "Invalid credentials. You have " + String(3 - counter) + " attemps left"
+                errorLabel.isHidden = false
+            }
         }
     }
     
