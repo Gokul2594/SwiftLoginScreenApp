@@ -10,11 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBAction func onLoginClick(_ sender: Any) {
+        let username = usernameField.text ?? ""
+        let password = passwordField.text ?? ""
+        
+        let loginManager = LoginManager(username: username, password: password)
+        
+        if(loginManager.login()){
+            errorLabel.isHidden = true
+        }
+        else{
+            errorLabel.isHidden = false
+        }
+    }
+    
+    
 }
 
