@@ -31,6 +31,7 @@ class ViewController: UIViewController {
             errorLabel.textColor = UIColor.green
             errorLabel.textAlignment = NSTextAlignment.center
             errorLabel.isHidden = false
+            counter = 0
         }
         else{
             counter += 1
